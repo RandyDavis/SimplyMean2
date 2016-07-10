@@ -1,0 +1,1 @@
+Repo for second/refresh of MEAN Stack app, SimplyMean tutorial

@@ -3,22 +3,18 @@
  */
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
 
 app.get("/serviceClients", function (req, res) {
-    var svc1 = {
-        name: "LinkedIn"
-    };
-    var svc2 = {
-        name: "Rotten Tomatoes"
-    };
-    var svc3 = {
-        name: "IMDB"
-    };
-
-    var serviceClients = [svc1, svc2, svc3];
-    res.json(serviceClients);
+    res.json([]);
 });
+
+app.post("/serviceClients", function (req, res) {
+    var svc = req.body;
+    console.log(svc);
+})
 
 app.listen(3000);

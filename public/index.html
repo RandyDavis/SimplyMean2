@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Simply MEAN 2</title>
     <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="shortcut icon" href="">
 </head>
 <body ng-app="app">
     <div class="row" ng-controller="ServicesCtrl">
@@ -14,6 +15,15 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" ng-model="serviceClient.name">
+                        </td>
+                        <td>
+                            <button class="hollow button" ng-click="create()">Add</button>
+                        </td>
                     </tr>
                 </thead>
                 <tbody>

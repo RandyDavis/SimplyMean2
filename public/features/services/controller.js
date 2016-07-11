@@ -4,7 +4,10 @@ angular.module('app', [])
         console.log('Hello from ServicesCtrl');
         $scope.message = "Hello from controller!";
 
-
+        $scope.create = function () {
+            console.log($scope.serviceClient);
+            $http.post("/serviceClients", $scope.serviceClient);
+        }
 
         $scope.renderServiceClients = function (response) {
             $scope.serviceClients = response;

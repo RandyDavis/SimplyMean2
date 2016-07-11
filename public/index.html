@@ -5,12 +5,28 @@
     <title>Simply MEAN 2</title>
     <link rel="stylesheet" href="css/foundation.min.css">
 </head>
-<body>
-    <div class="row">
-        <h1>Service Client Maker</h1>
+<body ng-app="app">
+    <div class="row" ng-controller="ServicesCtrl">
+        <div class="small-12 columns">
+            <h1>Service Client Maker</h1>
+            {{message}}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="serviceClient in serviceClients">
+                        <td>{{serviceClient.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
     <script src="js/angular.min.js"></script>
+    <script src="features/services/controller.js"></script>
 </body>
 </html>

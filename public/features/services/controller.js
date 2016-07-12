@@ -8,7 +8,7 @@ angular.module('app', [])
             console.log($scope.serviceClient);
             $http.post("/serviceClients", $scope.serviceClient)
             .success(function (response) {
-                console.log(response);
+                $scope.all();
             });
         }
 
@@ -17,6 +17,12 @@ angular.module('app', [])
         }
 
         // get all
-        $http.get("/serviceClients")
-            .success($scope.renderServiceClients);
+        $scope.all = function () {
+
+            $http.get("/serviceClients")
+                .success($scope.renderServiceClients);
+        }
+
+        $scope.all();
     }]);
+

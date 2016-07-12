@@ -16,6 +16,13 @@ angular.module('app', [])
             $scope.serviceClients = response;
         }
 
+        $scope.remove = function (id) {
+            $http.delete("/serviceClients/" + id)
+            .success(function (response) {
+                $scope.all();
+            });
+        }
+
         // get all
         $scope.all = function () {
 

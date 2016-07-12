@@ -29,6 +29,7 @@
                 <tbody>
                     <tr ng-repeat="serviceClient in serviceClients">
                         <td>{{serviceClient.name}}</td>
+                        <td><button class="hollow button alert" ng-click="remove(serviceClient._id)">Remove</button></td>
                     </tr>
                 </tbody>
             </table>

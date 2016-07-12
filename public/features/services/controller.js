@@ -6,7 +6,10 @@ angular.module('app', [])
 
         $scope.create = function () {
             console.log($scope.serviceClient);
-            $http.post("/serviceClients", $scope.serviceClient);
+            $http.post("/serviceClients", $scope.serviceClient)
+            .success(function (response) {
+                console.log(response);
+            });
         }
 
         $scope.renderServiceClients = function (response) {

@@ -16,6 +16,7 @@
                     <tr>
                         <th>Name</th>
                         <th>&nbsp;</th>
+                        <th>&nbsp;</th>
                     </tr>
                     <tr>
                         <td>
@@ -24,12 +25,16 @@
                         <td>
                             <button class="hollow button" ng-click="create()">Add</button>
                         </td>
+                        <td>&nbsp;</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="serviceClient in serviceClients">
                         <td>{{serviceClient.name}}</td>
-                        <td><button class="hollow button alert" ng-click="remove(serviceClient._id)">Remove</button></td>
+                        <td>
+                            <button class="hollow button alert" ng-click="remove(serviceClient._id)">Remove</button>
+                            <button class="hollow button warning" ng-click="select(serviceClient._id">Select</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

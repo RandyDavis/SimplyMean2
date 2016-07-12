@@ -10,18 +10,23 @@ angular.module('app', [])
             .success(function (response) {
                 $scope.all();
             });
-        }
+        };
 
         $scope.renderServiceClients = function (response) {
             $scope.serviceClients = response;
-        }
+        };
 
         $scope.remove = function (id) {
             $http.delete("/serviceClients/" + id)
             .success(function (response) {
                 $scope.all();
             });
-        }
+        };
+
+        $scope.select = function (id) {
+            console.log(id);
+            // $http.put("/serviceClients")
+        };
 
         // get all
         $scope.all = function () {

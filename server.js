@@ -34,6 +34,15 @@ app.get("/serviceClients/:id", function (req, res) {
     })
 });
 
+app.put("/serviceClients/:id", function (req, res) {
+    console.log(req.body);
+    db.serviceClients.findAndModify({_id: mongojs.ObjectId(id)},
+        {$set: {name: req.body.name}},
+    function (err, doc) {
+        res.json(doc);
+    });
+});
+
 app.delete("/serviceClients/:id", function (req, res) {
     var id = req.params.id;
     console.log(id);

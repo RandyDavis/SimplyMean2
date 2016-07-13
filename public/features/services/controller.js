@@ -22,6 +22,11 @@ angular.module('app', [])
                 $scope.all();
             });
         };
+        
+        $scope.update = function () {
+            console.log($scope.serviceClient);
+            $http.put("/serviceClients/" + $scope.serviceClient._id, $scope.serviceClient);
+        };
 
         $scope.select = function (id) {
             console.log(id);

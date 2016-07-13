@@ -25,7 +25,11 @@ angular.module('app', [])
 
         $scope.select = function (id) {
             console.log(id);
-            // $http.put("/serviceClients")
+            $http.get("/serviceClients/" + id)
+                .success(function (response) {
+                    console.log(response);
+                    $scope.serviceClient = response;
+                })
         };
 
         // get all

@@ -26,6 +26,14 @@ app.post("/serviceClients", function (req, res) {
     });
 });
 
+app.get("/serviceClients/:id", function (req, res) {
+    var id = req.params.id;
+    console.log(id);
+    db.serviceClients.findOne({_id: mongojs.ObjectId(id)}, function (err, doc) {
+        res.json(doc);
+    })
+});
+
 app.delete("/serviceClients/:id", function (req, res) {
     var id = req.params.id;
     console.log(id);
